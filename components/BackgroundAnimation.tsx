@@ -21,7 +21,9 @@ export default function BackgroundAnimation() {
     //  path: ' /animations/Green.json',
     //  path: ' /animations/sphere.json',
     //  path: ' /animations/Planet-galaxy.json',
-     path: ' /animations/ai_test.json',
+    //  path: ' /animations/ai-core.json',
+     path: ' /animations/Space-Purple.json',
+    //  path: ' /animations/ai_test.json',
     });
 
     return () => anim.destroy();

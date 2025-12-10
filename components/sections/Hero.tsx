@@ -274,7 +274,7 @@ export default function Hero() {
 
 
       {/* Animated gradient + JSON background */}
-      <motion.div style={{ y: bgY }}>
+         <motion.div>
         <BackgroundAnimationWrapper />
       </motion.div>
 
@@ -345,7 +345,8 @@ export default function Hero() {
             <div className="absolute -inset-8 bg-brand/20 blur-3xl rounded-full" />
 
             {/* Card */}
-            <div className="relative rounded-2xl bg-black/60 border-brand/20 p-6 backdrop-blur-xl shadow-[0_0_35px_rgba(0,241,118,0.25)]">
+            <div className="relative rounded-2xl bg-black/60 border-brand/20 p-6 backdrop-blur-xl shadow-[0_0_35px_rgba(0,241,118,0.25)]" style={{background: "#f0f8ff00",
+    opacity: "0.9"}}>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-medium text-slate-400">
                   Live-Auszug Ihrer Website
