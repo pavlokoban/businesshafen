@@ -1,0 +1,11 @@
+:root {
+  --brand: #00F176;
+  --brand-light: #4DFFAA;
+  --brand-dark: #00B85A;
+
+  --radius-lg: 1.2rem;
+  --radius-md: .9rem;
+  --radius-sm: .5rem;
+
+  --shadow-brand: 0 0 40px rgba(0, 241, 118, 0.25);
+}
