@@ -90,6 +90,16 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-spin: spin 2s linear infinite;
+  --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
+  @keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+        }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+        }
+    }
 }
 
 @media (prefers-color-scheme: light) {
@@ -99,6 +109,25 @@
        --foreground: red;
   }
 }
+/* .hero-dots {
+  background-color: #f8fafc;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+} */
+ .hero-dots {
+  background-color: #f8fafc;
+  /* background-position: fixed; */
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.16) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  will-change: transform;
+}
+
 
 body {
   font-family: "Funnel Display", Arial, Helvetica, sans-serif;
@@ -162,4 +191,80 @@ body {
     black 75%,
     transparent 100%
   );
+}
+/* iOS-style glass */
+.glass-ios {
+  background: rgba(255,255,255,.14);
+  /* backdrop-filter: blur(28px) saturate(180%); */
+  backdrop-filter: blur(3px) saturate(8);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  /* border: 1px solid rgba(255,255,255,.35); */
+  box-shadow: 0 8px 30px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.4);
+  isolation: isolate;        /* 🔥 важное */
+}
+/* .glass-ios::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.35), transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(255,255,255,0.25), transparent 45%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+} */
+
+.glass-ios:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+
+
+
+
+/* ===============================
+   GLOBAL HEADING REVEAL (iOS style)
+   =============================== */
+
+.heading-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(8px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, filter, opacity;
+}
+
+.heading-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* slight glow for dark text on light bg */
+.heading-reveal.glass-accent {
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.4),
+    0 8px 30px rgba(0,0,0,0.06);
+}
+h1, h2, h3, h4 {
+  will-change: transform, filter, opacity;
+}
+/* ===== Heading line reveal (local) ===== */
+
+.hero-title {
+  display: block;
+}
+
+.hero-title .line-mask {
+  display: block;
+  overflow: clip; /* как у Monad */
+}
+
+.hero-title .line {
+  display: block;
+  transform: translateY(100%);
+  will-change: transform;
 }

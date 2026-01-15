@@ -1,0 +1,15 @@
+.text-block {
+  margin: 1vw;
+  max-width: 800px;
+  font-family: inherit;
+  /* font-size: clamp(14px, 4vw, 32px); */
+font-size: clamp(10px, 2vw, 14px);
+line-height: 1.4;
+  /* color: #fff; */
+    color: #000000;
+}
+
+.char {
+  will-change: transform;
+  display: inline-block;
+}

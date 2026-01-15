@@ -1,9 +1,11 @@
 import './globals.css'
 import Header from "@/components/Header";
+import HeaderMain from "@/components/HeaderNew";
 import CookieBanner from "@/components/CookieBanner";
 import Footer from "@/components/Footer";
 import { Funnel_Display } from 'next/font/google';
-
+import { useHeadingReveal } from "@/components/useHeadingReveal";
+import ClientEffects from "@/components/ClientEffects";
 
 export const metadata = {
   title: "BusinessHafen – KI-freundliche WordPress-Websites & AI SEO | Frankfurt am Main",
@@ -34,11 +36,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={`${funnel}`}>
-      <body className="font-base bg-slate-950 text-white">
-        <Header />
+      {/* <body className="font-base bg-slate-950 text-black"> */}
+       <body className="font-base bg-slate-50 text-black">
+        <ClientEffects>
+        {/* <Header /> */}
+        <HeaderMain />
           <main>{children}</main>
           <CookieBanner />
         <Footer />
+         </ClientEffects>
       </body>
     </html>
   )

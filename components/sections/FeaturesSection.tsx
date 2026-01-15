@@ -58,6 +58,7 @@
 
 import Container from "@/components/Container";
 import { motion } from "framer-motion";
+import ScrambledText from '@/components/ui/ScrambledText';
 
 const features = [
   {
