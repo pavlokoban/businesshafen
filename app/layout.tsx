@@ -1,5 +1,4 @@
 import './globals.css'
-import Header from "@/components/Header";
 import HeaderMain from "@/components/HeaderNew";
 import CookieBanner from "@/components/CookieBanner";
 import Footer from "@/components/Footer";
