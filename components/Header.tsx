@@ -1,29 +1,3 @@
-"use client";
-
-import Link from "next/link";
-import Container from "@/components/Container";
-import { AIButton } from "@/components/ui/ai-button";
-import { Menu, X } from "lucide-react";
-// import { useState } from "react";
-  import StaggeredMenu from './StaggeredMenu';
-  import { MenuBar } from "@/components/ui/animated-menu-bar";
-import React, { useState } from 'react'
-
-const menuItems = [
-  'dashboard',
-  'notifications2',
-  'settings',
-  'help',
-  'security',
-] as const;
-type MenuItem = typeof menuItems[number];
-
-export default function DemoOne() {
-    const [active, setActive] = useState<MenuItem>('dashboard');
-  return  <MenuBar active={active} onSelect={setActive} />;
-}
-
-
 // export default function Header() {
 //   const [open, setOpen] = useState(false);
 // const menuItems = [
